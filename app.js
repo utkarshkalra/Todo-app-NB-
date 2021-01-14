@@ -2,7 +2,9 @@ const todoinput=document.querySelector(".inputtodo");
 const addbutton=document.querySelector(".addtodo");
 const todolist=document.querySelector(".todolist");
 
+
 addbutton.addEventListener("click",addtodo)
+
 todolist.addEventListener("click",deletedone)
 
 function addtodo(e){
@@ -10,25 +12,29 @@ function addtodo(e){
 
     e.preventDefault();
 
-    const todos=document.createElement('div');
-    todos.classList.add('todos');
+    // const todos=document.createElement('div');
+    // todos.classList.add('todos');
 
     const todoitem=document.createElement('Li');
-    todoitem.innerText=todoinput.value;
     todoitem.classList.add('todoitem');
-    todos.appendChild(todoitem)
+    todolist.appendChild(todoitem)
+
+    const todotext=document.createElement('p');
+    todotext.classList.add('todotext');
+    todotext.innerText=todoinput.value;
+    todoitem.appendChild(todotext)
+
 
     const markdonebutton=document.createElement('button');
-    markdonebutton.innerText="tick";
+    markdonebutton.innerHTML='<i class="fas fa-check-square"></i>';
     markdonebutton.classList.add('doneb');
-    todos.appendChild(markdonebutton)
+    todoitem.appendChild(markdonebutton)
 
     const deletebutton=document.createElement('button');
-    deletebutton.innerText="delete";
+    deletebutton.innerHTML='<i class="fas fa-trash-alt"></i>';
     deletebutton.classList.add("deleteb");
-    todos.appendChild(deletebutton)
+    todoitem.appendChild(deletebutton)
 
-    todolist.appendChild(todos);
     todoinput.value="";
    
     

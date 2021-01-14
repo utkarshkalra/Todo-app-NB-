@@ -5,10 +5,17 @@
 /* font-family: 'Dancing Script', cursive;
 font-family: 'Montserrat', sans-serif; */
 body{
+    border:0.6rem solid white;
     height:100vh;
     text-align: center;
     background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
 }
+button{
+    padding:0 8px;
+    border:none;
+    font-size:1.4rem;
+}
+
 h1{
     margin:7% 0;
     /* border:4px solid black;
@@ -25,6 +32,7 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .wrapinput{
     width:100%;
@@ -32,44 +40,70 @@ form{
     justify-content: center;
 }
 .inputtodo{
+    padding:2.5% 0;
+    font-size:1.2rem;
     /* border:none; */
     min-width:75%;
     font-family: 'Montserrat', sans-serif; 
     
 }
 .todocontainer{
-    padding:2.5rem 0;
+    padding:2.0rem 0;
     width:100%;
-    /* display: flex;
-    flex-direction: column; */
 }
 .todolist{
-    width:90%;
+    width:97%;
 }
 
-.todos{
+/* .todos{
     margin-top:.5rem;
     height:4vh;
-    width:100%;
+    min-height:100%;
+    max-width:90vh;
     display:flex;
     justify-content: space-around;
     align-items: center;
-}
+} */
 
 .todoitem{
+    padding:5px 0;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    
+
+    list-style: none;
+}
+.todotext{
+    padding:8px 0;
+    text-align: left;
+    display:flex;
+    font-size: 1.2rem;
+    padding-left:5px;
     font-family: 'Montserrat', sans-serif; 
-    min-height:100%;
-    max-width:100%;
-    flex-wrap: wrap;
-    background:rgba(0,0,0,0.2);
+    flex-wrap: wrap; 
+    background:rgba(0,0,0,0.4);
     border:2px solid white;
     border-radius: 2px;
     color:white;
-    list-style: none;
     flex:1;
-    text-align: left;
+
+}
+.todoitem>button{
+    padding:8px 8px;
+    font-size:1.4rem;
+    height:100%;
+
 }
 
-.todos>button{
-    height:100%;
+
+i{
+    pointer-events:none;
+    
+}
+
+.completed{
+
+    color:white;
+    text-decoration: line-through;
 }
